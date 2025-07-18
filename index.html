@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workout Planner</title>
+  <style>
+    
+    p{
+      padding-top:8px;
+      padding-bottom: 8px;
+
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .banner {
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: blue;
+      color: white;
+      padding: 10px 20px;
+      width: 100%;
+    }
+
+    .banner a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      padding-right:25px;
+    }
+
+    
+    .center-text {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .welcome-message {
+      padding-top: 20px;
+    }
+
+    .question {
+      font-size: 1.2em;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    .buttons-exclusive,
+    .buttons-dynamic,
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .select-button {
+      padding: 10px 20px;
+      border: 2px solid blue;
+      background-color: white;
+      color:blue;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      border-radius: 5px;
+    }
+
+    .select-button.active {
+      background-color: blue;
+      color: white;
+      border-color: blue;
+    }
+
+    .question-block {
+      margin: 30px 0;
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      font-size: 1em;
+      margin-top: 10px;
+    }
+
+    .submit-container {
+      margin: 40px 0;
+    }
+
+    .submit-button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: orange;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      background-color:orangered;
+    }
+
+    .metrics {
+
+    border-block-color:  blue;
+    background-color: blue;
+    margin-left: 350px;
+    margin-right: 350px;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    }
+    .log {
+      margin:0;
+      padding: 0;
+    }
+    table {
+      background-color: blue;
+      padding: 30px;
+      border-radius: 20px;
+      width: 80%;
+      margin: 0 auto; 
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    td {
+      padding: 10px;
+      text-align: center;
+    }
+    input[type="number"] {
+      width: 100px;
+      padding: 5px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      height: 23px;
+    }
+    
+    
+    .button {
+      padding: 10px 20px;
+      background-color: blue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    
+    .select-button:hover {
+      background-color: rgb(209, 209, 209);
+      color: black;
+    }
+
+    
+    .button:hover {
+      background-color: darkblue;
+      color: white;
+    }
+
+    
+    .select-button.completed {
+      background-color: rgb(0, 228, 0);
+     color: white;
+      border-color:  rgb(0, 228, 0);
+    }
+
+
+
+
+  
+    
+  </style>
+</head>
+<body>
+
+  <div class="banner">
+    <div class="left-links">
+      <a href="workout_planner.html">Generate Workout</a>
+      <a href="Dashboard.html">Dashboard</a>
+    </div>
+    <div class="center-text">Workout Planner</div>
+    <div class="right-links">
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+    </div>
+  </div>
+
+  </body>
+  </html>
+  
