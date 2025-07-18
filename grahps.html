@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workout Planner</title>
+  <style>
+    
+    p{
+      padding-top:50px;
+      padding-bottom: 20px;
+
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .banner {
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: blue;
+      color: white;
+      padding: 10px 20px;
+      width: 100%;
+    }
+
+    .banner a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      padding-right:25px;
+    }
+
+    
+    .center-text {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .welcome-message {
+      padding-top: 20px;
+    }
+
+    .question {
+      font-size: 1.2em;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    .buttons-exclusive,
+    .buttons-dynamic,
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .select-button {
+      padding: 10px 20px;
+      border: 2px solid blue;
+      background-color: white;
+      color:blue;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      border-radius: 5px;
+    }
+
+    .select-button.active {
+      background-color: blue;
+      color: white;
+      border-color: blue;
+    }
+
+    .question-block {
+      margin: 30px 0;
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      font-size: 1em;
+      margin-top: 10px;
+    }
+
+    .submit-container {
+      margin: 40px 0;
+    }
+
+    .submit-button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: orange;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      background-color:orangered;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="banner">
+    <div class="left-links">
+      <a href="workout_planner.html">Generate Workout</a>
+      <a href="Dashboard.html">Dashboard</a>
+    </div>
+    <div class="center-text">Workout Planner</div>
+    <div class="right-links">
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+    </div>
+  </div>
+
+ <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+<body>
+<div
+id="myChart" style="width:100%; max-width:600px; height:500px;">
+</div>
+
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+// Set Data
+const data = google.visualization.arrayToDataTable([
+  ['Contry', 'Mhl'],
+  ['Arms',54.8],
+  ['Back',48.6],
+  ['Core',44.4],
+  ['Chest and sholders',23.9],
+  ['Legs',14.5]
+]);
+
+// Set Options
+const options = {
+  title:'Percentahe split of muscles worked in a workout',
+};
+
+// Draw
+const chart = new google.visualization.PieChart(document.getElementById('myChart'));
+chart.draw(data, options);
+
+
+}
+</script>
+

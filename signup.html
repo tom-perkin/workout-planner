@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workout Planner</title>
+  <style> 
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .banner {
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: blue;
+      color: white;
+      padding: 10px 20px;
+      width: 100%;
+    }
+
+    .banner a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      padding-right:25px;
+    }
+
+    
+    .center-text {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .content {
+      padding: 20px;
+      margin-top: 60px; /* Adjust for fixed banner height */
+      background-color: blue;
+      border-radius: 8px; 
+    
+      max-width: 800px;
+      margin: 80px auto; /* Center the content */
+      text-align: center;
+      color: white;
+    
+    }
+
+    .username {
+      margin-bottom: 10px;
+    }
+
+    .email {
+      margin-bottom: 10px;
+      
+    }
+    
+  
+   </style>
+
+   <div class="banner">
+    <div class="left-links">
+      <a href="workout_planner.html">Generate Workout</a>
+      <a href="Dashboard.html">Dashboard</a>
+    </div>
+    <div class="center-text">Workout Planner</div>
+    <div class="right-links">
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+    </div>
+  </div>
+
+  <div class="content" style="margin-top: 60px;">
+    <h1>Sign-up</h1>
+
+    <form action="/login" method="post">
+      <div class = "username">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required />
+      <br />
+      </div>
+      <div class = "email">
+      <label for="username" style="margin-right: 29px;">Email:</label>
+      <input type="text" id="email" name="email" required />
+      <br />
+      
+      
+
+      <label for="password" style="margin-right: 4px;" >Password:</label>
+      <input type="password" id="password" name="password" required style="margin-bottom: 10px; margin-top: 10px;"/>
+      <br />
+      <button type="submit" style="background-color: white; border-width: 0; width: 87px; height: 3 ;">Login</button>
+      </div>
+      
+      
+
+    
+    </form>
+   
+  </div>
+    <div class="signup-link">
+        <p>Already have an account? <a href="login.html">Login</a></p>
+        </div>
+</head>
+</html>

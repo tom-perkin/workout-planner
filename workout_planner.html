@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workout Planner</title>
+  <style>
+    
+    p{
+      padding-top:50px;
+      padding-bottom: 20px;
+
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .banner {
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: blue;
+      color: white;
+      padding: 10px 20px;
+      width: 100%;
+    }
+
+    .banner a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      padding-right:25px;
+    }
+
+    
+    .center-text {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .welcome-message {
+      padding-top: 20px;
+    }
+
+    .question {
+      font-size: 1.2em;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    .buttons-exclusive,
+    .buttons-dynamic,
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .select-button {
+      padding: 10px 20px;
+      border: 2px solid blue;
+      background-color: white;
+      color:blue;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      border-radius: 5px;
+    }
+
+    .select-button.active {
+      background-color: blue;
+      color: white;
+      border-color: blue;
+    }
+
+    .question-block {
+      margin: 30px 0;
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      font-size: 1em;
+      margin-top: 10px;
+    }
+
+    .submit-container {
+      margin: 40px 0;
+    }
+
+    .submit-button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: orange;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      background-color:orangered;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="banner">
+    <div class="left-links">
+      <a href="workout_planner.html">Generate Workout</a>
+      <a href="Dashboard.html">Dashboard</a>
+    </div>
+    <div class="center-text">Workout Planner</div>
+    <div class="right-links">
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+    </div>
+  </div>
+
+  <div class="welcome-message">
+    <p class="welcome-text">
+      Welcome to the workout maker tool. It will ask you a series of questions in order to ascertain your goals, current skill level, and the parameters that the plan will need to work around.
+    </p>
+  </div>
+
+  <div class="question">What sport do you play?</div>
+  <div class="buttons-exclusive">
+    <button class="select-button">Rugby</button>
+    <button class="select-button">Football</button>
+    <button class="select-button">Tennis</button>
+    <button class="select-button">Track</button>
+    <button class="select-button">Powerlifting</button>
+    <button class="select-button">Basketball</button>
+    <button class="select-button">Body building</button>
+  </div>
+
+  <div class="question">What position or focus area?</div>
+  <div class="buttons-dynamic" id="position-buttons"></div>
+
+  <!-- Additional questions -->
+  <div class="question-block">
+    <div class="question"> Which specific muscles do you want to focus on?</div>
+    <div class="button-group" data-multi="true">
+      <button class="select-button">Arms</button>
+      <button class="select-button">Chest and Shoulders</button>
+      <button class="select-button">Legs</button>
+      <button class="select-button">Back</button>
+      <button class="select-button">Core</button>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question"> Select the days that you want to workout</div>
+    <div class="button-group" data-multi="true">
+      <button class="select-button">Monday</button>
+      <button class="select-button">Tuesday</button>
+      <button class="select-button">Wednesday</button>
+      <button class="select-button">Thursday</button>
+      <button class="select-button">Friday</button>
+      <button class="select-button">Saturday</button>
+      <button class="select-button">Sunday</button>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question"> How intense do you want to train?</div>
+    <div class="button-group">
+      <button class="select-button">Very Low</button>
+      <button class="select-button">Low</button>
+      <button class="select-button">Medium</button>
+      <button class="select-button">High</button>
+      <button class="select-button">Very High</button>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question"> What are your priorities?</div>
+    <div class="button-group">
+      <button class="select-button">Build Muscle</button>
+      <button class="select-button">Getting Stronger</button>
+      <button class="select-button">Muscular Endurance</button>
+      <button class="select-button">Maximal Strength</button>
+      <button class="select-button">General Health</button>
+      <button class="select-button">Fat Loss</button>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question"> What's your secondary goal?</div>
+    <div class="button-group">
+      <button class="select-button">Build Muscle</button>
+      <button class="select-button">Getting Stronger</button>
+      <button class="select-button">Muscular Endurance</button>
+      <button class="select-button">Maximal Strength</button>
+      <button class="select-button">General Health</button>
+      <button class="select-button">Fat Loss</button>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question"> What is your current fitness level?</div>
+    <div class="button-group">
+      <button class="select-button">Very Low</button>
+      <button class="select-button">Low</button>
+      <button class="select-button">Medium</button>
+      <button class="select-button">High</button>
+      <button class="select-button">Very High</button>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question"> How many weeks do you want your training plan to be?</div>
+    <div class="button-group">
+      <button class="select-button">2</button>
+      <button class="select-button">4</button>
+      <button class="select-button">6</button>
+      <button class="select-button">8</button>
+      <button class="select-button">10</button>
+      <button class="select-button">12</button>
+      <button class="select-button">16</button>
+      <button class="select-button">20</button>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question"> What's your preferred workout type?</div>
+    <div class="button-group">
+      <button class="select-button">Weight Lifting</button>
+      <button class="select-button">Cardio</button>
+      <button class="select-button">HIIT</button>
+      <button class="select-button">Calisthenics</button>
+      <button class="select-button">Choose for me</button>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question"> How long should each workout be?</div>
+    <div class="button-group">
+      <button class="select-button">Very Short</button>
+      <button class="select-button">Short</button>
+      <button class="select-button">Medium</button>
+      <button class="select-button">Long</button>
+      <button class="select-button">Very Long</button>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question"> What's your gender?</div>
+    <div class="button-group">
+      <button class="select-button">Male</button>
+      <button class="select-button">Female</button>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question"> How old are you?</div>
+    <input type="number" placeholder="Enter your age" />
+  </div>
+
+  <div class="question-block">
+    <div class="question"> How much do you weigh in kg?</div>
+    <input type="number" placeholder="Enter your weight" />
+  </div>
+
+  <div class="question-block">
+    <div class="question"> How tall are you in cm?</div>
+    <input type="number" placeholder="Enter your height" />
+  </div>
+
+  <div class="question-block">
+    <div class="question"> Select all the equipment you have access to</div>
+    <div class="button-group" data-multi="true">
+      <button class="select-button">Free Weights</button>
+      <button class="select-button">Machine Weights</button>
+      <button class="select-button">Dumbbell</button>
+      <button class="select-button">Resistance Bands</button>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question"> What is one thing that you wish you had more of in your current workouts?</div>
+    <div class="button-group">
+      <button class="select-button">Variety</button>
+      <button class="select-button">Intensity</button>
+      <button class="select-button">Structure</button>
+      <button class="select-button">Recovery</button>
+      <button class="select-button">Fun</button>
+      <button class="select-button">None</button>
+    </div>
+  </div>
+
+  <div class="submit-container">
+    <button class="submit-button">Submit</button>
+  </div>
+
+  <script>
+    const sportButtons = document.querySelectorAll('.buttons-exclusive .select-button');
+    const positionButtonsContainer = document.getElementById('position-buttons');
+
+    const sportOptions = {
+      Rugby: [['1', '2', '3'], ['4', '5'], ['6', '7', '8'],['9', '10'],['12', '13'],['11', '14', '15'] ],
+      Football: [['Defender'], ['Midfielder'], ['Forward']],
+      Tennis: [['Defensive'], ['Balanced'], ['Aggressive']],
+      Track: [['Short Distance'], ['Medium Distance'], ['Long Distance']],
+      Powerlifting: [['Bench'], ['Squat'], ['Deadlift']],
+      Basketball: [['Point Guard'], ['Shooting Guard'], ['Small Forward'], ['Power Forward'], ['Center']],
+      'Body building': [['Option1'], ['Option2'], ['Option3'], ['Option4']]
+    };
+
+    sportButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        sportButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const sport = button.textContent.trim();
+        const options = sportOptions[sport];
+
+        positionButtonsContainer.innerHTML = '';
+        if (options) {
+          options.forEach(group => {
+            const groupButton = document.createElement('button');
+            groupButton.className = 'select-button';
+            groupButton.textContent = group.join(', ');
+            positionButtonsContainer.appendChild(groupButton);
+          });
+        }
+      });
+    });
+
+    positionButtonsContainer.addEventListener('click', (e) => {
+      if (e.target.classList.contains('select-button')) {
+        const all = positionButtonsContainer.querySelectorAll('.select-button');
+        all.forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+      }
+    });
+
+    document.querySelectorAll('.button-group').forEach(group => {
+      const isMulti = group.dataset.multi === "true";
+      group.addEventListener('click', (e) => {
+        if (e.target.classList.contains('select-button')) {
+          if (isMulti) {
+            e.target.classList.toggle('active');
+          } else {
+            group.querySelectorAll('.select-button').forEach(btn => btn.classList.remove('active'));
+            e.target.classList.add('active');
+          }
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
